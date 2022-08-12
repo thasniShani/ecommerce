@@ -16,8 +16,14 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.arrow_back),
+        leading:
+            IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
         backgroundColor: Colors.white,
+        actions: [
+          IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+          IconButton(onPressed: () {}, icon: const Icon(CupertinoIcons.heart)),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.shopping_cart))
+        ],
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -26,21 +32,6 @@ class _ItemDetailPageState extends State<ItemDetailPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 220),
-                  child: Row(
-                    children: [
-                      IconButton(
-                          onPressed: () {}, icon: const Icon(Icons.search)),
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(CupertinoIcons.heart)),
-                      IconButton(
-                          onPressed: () {},
-                          icon: const Icon(Icons.shopping_cart)),
-                    ],
-                  ),
-                ),
                 Image.asset(
                   widget.productDetail.pdtImage!,
                 ),
